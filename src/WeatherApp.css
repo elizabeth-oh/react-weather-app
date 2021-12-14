@@ -10,6 +10,8 @@ img {
     width: 80px;
     height: 80px;
     float: left;
+    position: relative;
+    top: 20px;
 }
 
 Form .searchForm {
@@ -48,7 +50,7 @@ Form .searchButton:hover {
 .units {
     font-size: smaller;
     position: relative;
-    top: -20px;
+    top: -10px;
     left: -15px;
 }
 
@@ -67,7 +69,7 @@ Form .searchButton:hover {
 .currentTemperature {
    display:inline-block;
    position: relative;
-   top: 10px;
+   top: 25px;
    left: -35px;
    font-size: 50px;
 }
