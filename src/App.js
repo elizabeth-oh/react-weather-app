@@ -1,14 +1,15 @@
 import './App.css';
+import WeatherApp from "./WeatherApp"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <div className="container">
+        <WeatherApp />
       </div>
     </div>
   );
 }
 
-export default App;
