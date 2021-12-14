@@ -3,7 +3,7 @@ import './WeatherApp.css';
 
 export default function WeatherApp() {
    return (
-       <div>
+       <div className="wrapper">
             <form>
                 <div className="row">
                     <div className="col-9">
@@ -15,11 +15,11 @@ export default function WeatherApp() {
                 </div>
             </form>
             <hr />
-            <h1>Paris</h1>
+            <h1 className="city">Paris</h1>
             <div className="row">
                 <div className="col-6">
                     <ul>
-                        <li>Tuesday 18:26</li>
+                        <li className="currentTime">Tuesday 18:26</li>
                         <li>Overcast Clouds</li>
                         <li>Humidity: 92%</li>
                         <li>Wind: 1km/h</li>
@@ -29,8 +29,8 @@ export default function WeatherApp() {
                     <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="Cloudy" />
                 </div>
                 <div className="col-3">
-                    <h2>8</h2>
-                    <span>
+                    <h2 className="currentTemperature">8</h2>
+                    <span className="units">
                         <a href="https://shecodes.io" className="celsiusLink">°C </a> |
                         <a href="https://shecodes.io" className="fahrenheitLink"> °F</a>
                     </span>
