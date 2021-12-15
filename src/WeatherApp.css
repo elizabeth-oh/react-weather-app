@@ -31,7 +31,7 @@ Form .searchButton:hover {
 .wrapper {
     font-family: 'Poppins', sans-serif;
     max-width: 550px;
-    margin: 40px auto;
+    margin: 40px auto 10px auto;
     padding: 20px 20px;
     border-radius: 20px;
     background-color: #F6E6CB;
