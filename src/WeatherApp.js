@@ -20,17 +20,43 @@ export default function WeatherApp(props) {
            }
        )
     }
+
+    function search() {
+        const apiKey = "3a1d5d01d798e7cb31a083ab1fcb39e0";
+        let units = "metric";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`
+
+        axios.get(apiUrl).then(handleResponse)
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        search();
+    }
+
+    function handleChange(event) {
+        setCity(event.target.value);
+    }
    
    if (weatherData.ready) {
         return (
             <div className="wrapper">
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className="row">
                             <div className="col-9">
-                                <input type="search" className="searchForm form-control search-input" placeholder="Look for a city..." />
+                                <input 
+                                    type="search" 
+                                    className="searchForm form-control search-input" 
+                                    placeholder="Look for a city..." 
+                                    onChange={handleChange}
+                                />
                             </div>
                             <div className="col-3">
-                                <input type="submit" className="searchButton btn btn-primary w-100" value="Search"></input>
+                                <input 
+                                    type="submit" 
+                                    className="searchButton btn btn-primary w-100" 
+                                    value="Search"
+                                />
                             </div>
                         </div>
                     </form>
@@ -59,12 +85,7 @@ export default function WeatherApp(props) {
                 </div>
         );}
     else {
-        const apiKey = "3a1d5d01d798e7cb31a083ab1fcb39e0";
-        let units = "metric";
-        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`
-
-        axios.get(apiUrl).then(handleResponse)
-
+        search()
         return "Loading...";
     }
 }
