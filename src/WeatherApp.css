@@ -54,11 +54,7 @@ Form .searchButton:hover {
     left: -15px;
 }
 
-.celsiusLink {
-    text-decoration: none;
-}
-
-.fahrenheitLink {
+.unitsLink {
     text-decoration: none;
 }
 

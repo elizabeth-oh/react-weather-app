@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import FormattedDate from './FormattedDate';
+import CurrentTemperature from './CurrentTemperature';
 import './CurrentWeather.css';
 
 export default function CurrentWeather(props) {
+
     return (
             <div>
                 <h1 className="city">{props.data.city}</h1>
@@ -20,13 +22,7 @@ export default function CurrentWeather(props) {
                     <div className="col-3">
                         <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt={props.data.description} />
                     </div>
-                    <div className="col-3">
-                        <h2 className="currentTemperature">{props.data.temperature}</h2>
-                        <span className="units">
-                            <a href="https://shecodes.io" className="celsiusLink">°C </a> |
-                            <a href="https://shecodes.io" className="fahrenheitLink"> °F</a>
-                        </span>
-                    </div>
+                    <CurrentTemperature celsiusTemperature={props.data.temperature} />
                 </div>
             </div>
     )
