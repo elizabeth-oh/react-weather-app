@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import './WeatherApp.css';
+import CurrentWeather from './CurrentWeather';
 
 export default function WeatherApp(props) {
    const [weatherData, setWeatherData] = useState({ ready:false });
@@ -61,28 +62,8 @@ export default function WeatherApp(props) {
                         </div>
                     </form>
                     <hr />
-                    <h1 className="city">{weatherData.city}</h1>
-                    <div className="row">
-                        <div className="col-6">
-                            <ul>
-                                <li className="currentTime">{(weatherData.date).toString()}</li>
-                                <li>{weatherData.description}</li>
-                                <li>Humidity: {weatherData.humidity}%</li>
-                                <li>Wind: {weatherData.wind}km/h</li>
-                            </ul>
-                        </div>
-                        <div className="col-3">
-                            <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt={weatherData.description} />
-                        </div>
-                        <div className="col-3">
-                            <h2 className="currentTemperature">{weatherData.temperature}</h2>
-                            <span className="units">
-                                <a href="https://shecodes.io" className="celsiusLink">°C </a> |
-                                <a href="https://shecodes.io" className="fahrenheitLink"> °F</a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
+            <CurrentWeather data={weatherData} />
+            </div>
         );}
     else {
         search()
