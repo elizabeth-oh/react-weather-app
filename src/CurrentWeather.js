@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import FormattedDate from './FormattedDate';
 import './CurrentWeather.css';
 
 export default function CurrentWeather(props) {
@@ -8,7 +9,9 @@ export default function CurrentWeather(props) {
                 <div className="row">
                     <div className="col-6">
                         <ul>
-                            <li className="currentTime">{(props.data.date).toString()}</li>
+                            <li className="currentTime">
+                                <FormattedDate date={props.data.date} />
+                            </li>
                             <li className="text-capitalize">{props.data.description}</li>
                             <li>Humidity: {props.data.humidity}%</li>
                             <li>Wind: {props.data.wind}km/h</li>
