@@ -6,14 +6,6 @@ hr {
     height: 0.3px;
 }
 
-img {
-    width: 80px;
-    height: 80px;
-    float: left;
-    position: relative;
-    top: 20px;
-}
-
 Form .searchForm {
     background: #E7D4B5;
     border-color: #E3CDC1;
@@ -50,7 +42,7 @@ Form .searchButton:hover {
 .units {
     font-size: smaller;
     position: relative;
-    top: -10px;
+    top: -5px;
     left: -15px;
 }
 
@@ -74,4 +66,12 @@ Form .searchButton:hover {
     font-weight: 100;
     position: relative;
     top: -10px; left: -31px;
+}
+
+.icon {
+    width: 80px;
+    height: 80px;
+    float: left;
+    position: relative;
+    top: 20px;
 }

@@ -1,7 +1,9 @@
 import React from 'react';
 import FormattedDate from './FormattedDate';
 import CurrentTemperature from './CurrentTemperature';
+import WeatherIcon from './WeatherIcon';
 import './CurrentWeather.css';
+import './WeatherApp.css';
 
 export default function CurrentWeather(props) {
 
@@ -19,8 +21,8 @@ export default function CurrentWeather(props) {
                             <li>Wind: {props.data.wind}km/h</li>
                         </ul>
                     </div>
-                    <div className="col-3">
-                        <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt={props.data.description} />
+                    <div className="col-3 icon">
+                        <WeatherIcon iconCode={props.data.icon} />
                     </div>
                     <CurrentTemperature celsiusTemperature={props.data.temperature} />
                 </div>
