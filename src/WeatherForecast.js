@@ -14,8 +14,22 @@ export default function WeatherForecast(props) {
 
     if (ready) {
     return (
-        <WeatherForecastDaily data={forecastData} />
+
+        <div className = "row">
+            {forecastData.map(function(dailyForecast, index) {
+
+                if (index < 5) {
+                return (
+                    <div className = "col">
+                        <WeatherForecastDaily data={dailyForecast} />
+                    </div>
+                )
+    }
+        else { return null}
+    })}
+        </div>
     )
+
     } else {
         const apiKey = "3a1d5d01d798e7cb31a083ab1fcb39e0"
         let lat = props.coordinates.lat
